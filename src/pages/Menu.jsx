@@ -85,7 +85,7 @@ const Menu = ({ match }) => {
 				const NewOrder = {
 					idUser: id,
 					products: [...trolley],
-					mesa: TableUser,
+					table: TableUser,
 					Observations: Observations,
 					total: trolleyTotal(),
 				}
@@ -154,7 +154,7 @@ const Menu = ({ match }) => {
 		return (
 			<>
 				{openModal && (
-					<Modal closeModal={(value) => setOpenModal(value)} pequeño>
+					<Modal closeModal={(value) => setOpenModal(value)} little>
 						<div className="trolley-row">
 							<h4>Product</h4>
 							<h4>Price</h4>

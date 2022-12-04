@@ -5,7 +5,7 @@ import SignInSocial from './SignInSocial'
 import { AuthContext } from './Auth'
 import { Navigate } from 'react-router-dom'
 
-const Login = () => {
+const Register = () => {
 	const [form, setValues] = useState({})
 	const [loading, setLoading] = useState(false)
 	const [errors, setErrors] = useState({})
@@ -170,4 +170,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default Register

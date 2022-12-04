@@ -7,9 +7,9 @@ import MyMenu from '../pages/MyMenu'
 import MyOrders from '../pages/MyOrders'
 import NotFound from '../pages/NotFound'
 import LoginRegisterContainer from '../pages/LoginRegisterContainer';
-import Login from '../components/Login'
 import '../assets/css/index.css'
 import Manan from "../pages/Manan";
+import Login from '../components/Login'
 
 // const App = () => {
 function App() {

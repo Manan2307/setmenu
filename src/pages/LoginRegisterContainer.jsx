@@ -19,7 +19,7 @@ const LoginRegisterContainer = () => {
 				<div className="login-register__links-question">
 					{Navigate === '/login' ? (
 						<span>
-							Do you already have an account?
+							Don't have an account?
 							<Link
 								className="login-register__form__question__link"
 								to="/register"
