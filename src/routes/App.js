@@ -17,7 +17,8 @@ function App() {
 		<>
 		<AuthProvider>
 				<Routes>
-					<Route path="/" element={<Home/>} />
+			     	<Route path="/" element={<Home/>} />
+					<Route path="/setmenu" element={<Home/>} />
 					<Route path="/manan" element={<Manan/>} />
 					<Route path="/login" element={<Login/>} />
 					<Route path="/register" element={<LoginRegisterContainer/>} />
