@@ -11,7 +11,7 @@ const LoginRegisterContainer = () => {
 				<Link to="/">
 					<img
 						className="login-register__form__logo"
-						src={process.env.PUBLIC_URL+"/img/logos/SetMenu_whitelogo.png"}
+						src={process.env.PUBLIC_URL+"/img/logos/setmenu-whitelogo.png"}
 						alt="Logo"
 					/>
 				</Link>

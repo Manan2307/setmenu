@@ -12,7 +12,7 @@ const NotFound = () => {
 				<Link className="header-landing__logo" to="/">
 					<img
 						className="header-landing__logo--img"
-						src={process.env.PUBLIC_URL+"/img/logos/SetMenu_whitelogo.png"}
+						src={process.env.PUBLIC_URL+"/img/logos/setmenu-whitelogo.png"}
 						alt="logo"
 					/>
 				</Link>
