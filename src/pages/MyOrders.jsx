@@ -119,7 +119,7 @@ const MyOrders = () => {
 														onClick={() => onDeleteOrder(order.id)}
 														className="order-container__header-button"
 													>
-														<img src="/img/icons/trash.svg" alt="Remove" />
+														<img src={process.env.PUBLIC_URL+"/img/icons/trash.svg"} alt="Remove" />
 													</button>
 												</div>
 												<br />

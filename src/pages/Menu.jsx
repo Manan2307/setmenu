@@ -221,7 +221,7 @@ const Menu = ({ match }) => {
 						<Link className="header__logo__link" to="/">
 							<img
 								className="header__logo"
-								src="/img/logos/SetMenu_blacklogo.png"
+								src={process.env.PUBLIC_URL+"/img/logos/SetMenu_blacklogo.png"}
 								alt="Logo"
 							/>
 						</Link>
@@ -240,7 +240,7 @@ const Menu = ({ match }) => {
 							</div>
 							<img
 								className="header__button__img"
-								src="/img/icons/shopping-cart.svg"
+								src={process.env.PUBLIC_URL+"/img/icons/shopping-cart.svg"}
 								alt="Shop Car"
 							/>
 						</button>
@@ -301,7 +301,7 @@ const Menu = ({ match }) => {
 		<div className="fullscreen-loader">
 			<img
 				className="fullscreen-loader__img"
-				src="/img/logos/SetMenu_blacklogo.png"
+				src={process.env.PUBLIC_URL+"/img/logos/SetMenu_blacklogo.png"}
 				alt="Logo"
 			/>
 		</div>

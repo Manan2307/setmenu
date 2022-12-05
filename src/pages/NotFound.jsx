@@ -12,7 +12,7 @@ const NotFound = () => {
 				<Link className="header-landing__logo" to="/">
 					<img
 						className="header-landing__logo--img"
-						src="/img/logos/SetMenu_whitelogo.png"
+						src={process.env.PUBLIC_URL+"/img/logos/SetMenu_whitelogo.png"}
 						alt="logo"
 					/>
 				</Link>
@@ -39,7 +39,7 @@ const NotFound = () => {
 					<span>Go to start!</span>
 					<img
 						className="landing__button--img"
-						src="/img/icons/arrow-right.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/arrow-right.svg"}
 						alt="→"
 					/>
 				</Link>
@@ -47,7 +47,7 @@ const NotFound = () => {
 			<div>
 				<img
 					className="landing-container__illustration"
-					src="/img/illustrations/landing.svg"
+					src={process.env.PUBLIC_URL+"/img/illustrations/landing.svg"}
 					alt="Restaurant"
 				/>
 			</div>

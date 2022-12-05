@@ -7,7 +7,7 @@ const EndOrder = () => {
 		<div className="succesful-order">
 			<img
 				className="succesful-order__image"
-				src="/img/illustrations/order.png"
+				src={process.env.PUBLIC_URL+"/img/illustrations/order.png"}
 				alt="order"
 			/>
 			<h1>Your order was successfully completed {'😄'}</h1>
@@ -17,7 +17,7 @@ const EndOrder = () => {
 				<span>Go to start</span>
 				<img
 					className="landing__button--img"
-					src="/img/icons/arrow-right.svg"
+					src={process.env.PUBLIC_URL+"/img/icons/arrow-right.svg"}
 					alt="→"
 				/>
 			</Link>

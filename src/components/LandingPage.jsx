@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/pages/LandingPage.css'
+import second from '../'
 
 const LandingPage = () => {
 	return (
@@ -9,7 +10,8 @@ const LandingPage = () => {
 				<Link className="header-landing__logo" to="/">
 					<img
 						className="header-landing__logo--img"
-						src="/img/logos/SetMenu_whitelogo.png"
+						//src {"/img/logos/SetMenu_whitelogo.png"}
+						src={process.env.PUBLIC_URL + "/img/logos/SetMenu_whitelogo.png"}
 						alt="logo"
 					/>
 				</Link>
@@ -43,7 +45,7 @@ const LandingPage = () => {
 						<span>Demo</span>
 						<img
 							className="landing__button--img"
-							src="/img/icons/arrow-right-black.svg"
+							src={process.env.PUBLIC_URL +"/img/icons/arrow-right-black.svg"}
 							alt="→"
 						/>
 					</Link> */}
@@ -54,7 +56,7 @@ const LandingPage = () => {
 						<span>Sign up for free</span>
 						<img
 							className="landing__button--img"
-							src="/img/icons/arrow-right.svg"
+							src={process.env.PUBLIC_URL +"/img/icons/arrow-right.svg"}
 							alt="→"
 						/>
 					</Link>
@@ -63,7 +65,7 @@ const LandingPage = () => {
 			<div>
 				<img
 					className="landing-container__illustration"
-					src="/img/illustrations/landing.svg"
+					src={process.env.PUBLIC_URL +"/img/illustrations/landing.svg"}
 					alt="Restaurant"
 				/>
 			</div>

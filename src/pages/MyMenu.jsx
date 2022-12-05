@@ -269,7 +269,7 @@ const MyMenu = () => {
 								Menu QR Code
 								<img
 									className="menu-link-qr__qr--icon"
-									src="/img/icons/qrcode.svg"
+									src={process.env.PUBLIC_URL+"/img/icons/qrcode.svg"}
 									alt="QR"
 								/>
 							</a>

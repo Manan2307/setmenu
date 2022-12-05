@@ -46,7 +46,7 @@ const SignInSocial = ({ setErrors }) => {
 				>
 					<img
 						className="sign-in-social__button--img"
-						src="/img/icons/google.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/google.svg"}
 						alt="Google"
 					/>
 				</button>
@@ -56,7 +56,7 @@ const SignInSocial = ({ setErrors }) => {
 				>
 					<img
 						className="sign-in-social__button--img"
-						src="/img/icons/facebook.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/facebook.svg"}
 						alt="Facebook"
 					/>
 				</button>

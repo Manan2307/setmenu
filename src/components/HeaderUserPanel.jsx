@@ -12,7 +12,7 @@ const HeaderUserPanel = ({ currentUser }) => {
 			<Link className="user-panel__header__logo" to="/">
 				<img
 					className="user-panel__header__logo--img"
-					src="/img/logos/SetMenu_blacklogo.png"
+					src={process.env.PUBLIC_URL+"/img/logos/SetMenu_blacklogo.png"}
 					alt="Logo"
 				/>
 			</Link>
@@ -39,7 +39,7 @@ const HeaderUserPanel = ({ currentUser }) => {
 			<div className="user-panel__profile">
 				<img
 					className="user-panel__profile__image"
-					src={'/img/profile.png'}
+					src={process.env.PUBLIC_URL+'/img/profile.png'}
 					alt="Profile picture"
 				/>
 				<div className="user-panel__profile__text__container">

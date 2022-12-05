@@ -71,7 +71,7 @@ const Register = () => {
 				<label className="login-register-form__label regirter-grid--division">
 					<img
 						className="login-register-form__label__icon"
-						src="/img/icons/user.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/user.svg"}
 						alt="User"
 					/>
 					<input
@@ -87,7 +87,7 @@ const Register = () => {
 				<label className="login-register-form__label regirter-grid--division">
 					<img
 						className="login-register-form__label__icon"
-						src="/img/icons/mail.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/mail.svg"}
 						alt="User"
 					/>
 					<input
@@ -102,7 +102,7 @@ const Register = () => {
 				<label className="login-register-form__label register-grid__correccion-icon">
 					<img
 						className="login-register-form__label__icon"
-						src="/img/icons/padlock.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/padlock.svg"}
 						alt="User"
 					/>
 					<input
@@ -118,7 +118,7 @@ const Register = () => {
 				<label className="login-register-form__label register-grid__correccion-icon">
 					<img
 						className="login-register-form__label__icon"
-						src="/img/icons/padlock.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/padlock.svg"}
 						alt="User"
 					/>
 					<input

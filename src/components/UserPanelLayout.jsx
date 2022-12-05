@@ -94,7 +94,7 @@ const UserPanelLayout = ({
 							Add food
 							<img
 								className="user-panel__title--button-icon"
-								src="/img/icons/plus-circle.svg"
+								src={process.env.PUBLIC_URL+"/img/icons/plus-circle.svg"}
 								alt="+"
 							/>
 						</button>

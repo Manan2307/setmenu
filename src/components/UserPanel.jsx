@@ -13,13 +13,13 @@ const UserPanel = () => {
 						<div className="main-menu-card__arrow-container">
 							<img
 								className="main-menu-card__arrow-container--img"
-								src="/img/icons/arrow-card-1.svg"
+								src={process.env.PUBLIC_URL+"/img/icons/arrow-card-1.svg"}
 								alt="→"
 							/>
 						</div>
 						<img
 							className="main-menu-card--img-1"
-							src="/img/illustrations/card-1.png"
+							src={process.env.PUBLIC_URL+"/img/illustrations/card-1.png"}
 							alt="Food"
 						/>
 					</div>
@@ -30,13 +30,13 @@ const UserPanel = () => {
 						<div className="main-menu-card__arrow-container">
 							<img
 								className="main-menu-card__arrow-container--img"
-								src="/img/icons/arrow-card-2.svg"
+								src={process.env.PUBLIC_URL+"/img/icons/arrow-card-2.svg"}
 								alt="→"
 							/>
 						</div>
 						<img
 							className="main-menu-card--img-2"
-							src="/img/illustrations/card-2.png"
+							src={process.env.PUBLIC_URL+"/img/illustrations/card-2.png"}
 							alt="Food"
 						/>
 					</div>

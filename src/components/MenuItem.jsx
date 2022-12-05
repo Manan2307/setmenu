@@ -46,7 +46,7 @@ const MenuItem = ({ id, name, price, description, addToCart }) => {
 				<div className="menu__item__circle">
 					<img
 						className="menu__item__circle__img"
-						src="/img/food/food.jpg"
+						src={process.env.PUBLIC_URL+"/img/food/food.jpg"}
 						alt="Pizza"
 					/>
 				</div>

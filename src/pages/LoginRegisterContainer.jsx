@@ -11,7 +11,7 @@ const LoginRegisterContainer = () => {
 				<Link to="/">
 					<img
 						className="login-register__form__logo"
-						src="/img/logos/SetMenu_whitelogo.png"
+						src={process.env.PUBLIC_URL+"/img/logos/SetMenu_whitelogo.png"}
 						alt="Logo"
 					/>
 				</Link>
@@ -62,7 +62,7 @@ const LoginRegisterContainer = () => {
 				</span>
 				<img
 					className="login-register__content__image"
-					src="/img/illustrations/login_register.png"
+					src={process.env.PUBLIC_URL+"/img/illustrations/login_register.png"}
 					alt="Illustration"
 				/>
 			</div>

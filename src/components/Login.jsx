@@ -63,7 +63,7 @@ const Login = () => {
 				<label className="login-register-form__label">
 					<img
 						className="login-register-form__label__icon"
-						src="/img/icons/mail.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/mail.svg"}
 						alt="User"
 					/>
 					<input
@@ -78,7 +78,7 @@ const Login = () => {
 				<label className="login-register-form__label">
 					<img
 						className="login-register-form__label__icon"
-						src="/img/icons/padlock.svg"
+						src={process.env.PUBLIC_URL+"/img/icons/padlock.svg"}
 						alt="User"
 					/>
 					<input
