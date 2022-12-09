@@ -14,7 +14,7 @@ const EndOrder = () => {
 			<br />
 			<p>In a few minutes your food will arrive at the table!</p>
 			<Link className="landing__button__main landing__button" to="/">
-				<span>Go to start</span>
+				<span>Go to Menu</span>
 				<img
 					className="landing__button--img"
 					src={process.env.PUBLIC_URL+"/img/icons/arrow-right.svg"}

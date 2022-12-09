@@ -8,9 +8,9 @@ import Modal from '../components/Modal'
 import EndOrder from '../components/EndOrder'
 import '../assets/css/pages/Home.css'
 
-const Menu = ({params}) => {
+const Menu = () => {
 	//const id = match.params.id
-	const { id } = useParams();
+	const { id }  = useParams();
 	const [active, setActive] = useState(false)
 	const [noMenu, setNoMenu] = useState(false)
 	const [food, setFood] = useState([])

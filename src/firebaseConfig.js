@@ -6,7 +6,7 @@ import { getAnalytics } from "firebase/analytics";
 const app = firebase.initializeApp({
 	apiKey: "AIzaSyB-HuMpggeqx23pF6zCLiYoJO-BjEqS9H8",
 	authDomain: "setmenu-a5d55.firebaseapp.com",
-	//databaseURL: 'https://setmenu-a5d55-default-rtdb.asia-southeast1.firebasedatabase.app/',
+	databaseURL: 'https://setmenu-a5d55-default-rtdb.asia-southeast1.firebasedatabase.app/',
 	projectId: "setmenu-a5d55",
 	storageBucket: "setmenu-a5d55.appspot.com",
 	messagingSenderId: "6192868695",
