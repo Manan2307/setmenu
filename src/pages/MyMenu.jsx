@@ -292,7 +292,7 @@ const MyMenu = () => {
 												<br />
 												<p>{food.description}</p>
 												<br />
-												<strong>$ {food.price}</strong>
+												<strong>₹ {food.price}</strong>
 												<div className="food-container__buttons">
 													<button
 														className="food-container-button food-container__button-edit"

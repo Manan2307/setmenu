@@ -32,7 +32,7 @@ const MenuItem = ({ id, name, price, description, addToCart }) => {
 					<p>{description}</p>
 					<br />
 					<p>
-						<strong>$ {price}</strong>
+						<strong>₹ {price}</strong>
 					</p>
 					<input
 						onClick={handleClick}
@@ -56,7 +56,7 @@ const MenuItem = ({ id, name, price, description, addToCart }) => {
 					<p>{description.slice(0, 20)}...</p>
 					<br />
 					<p>
-						<strong>$ {price}</strong>
+						<strong>₹ {price}</strong>
 					</p>
 				</div>
 			</div>

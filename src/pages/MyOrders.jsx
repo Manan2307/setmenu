@@ -137,7 +137,7 @@ const MyOrders = () => {
 														>
 															<span>{product.name}</span>
 															<span>{product.amount}</span>
-															<span>$ {product.price}</span>
+															<span>₹ {product.price}</span>
 														</div>
 													)
 												})}
@@ -151,7 +151,7 @@ const MyOrders = () => {
 												<hr />
 												<br />
 												<p className="total-order">
-													<strong>Total:</strong> ${order.total}
+													<strong>Total:</strong> ₹{order.total}
 												</p>
 												<br />
 											</div>

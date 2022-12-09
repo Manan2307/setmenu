@@ -8,7 +8,7 @@ import Modal from '../components/Modal'
 import EndOrder from '../components/EndOrder'
 import '../assets/css/pages/Home.css'
 
-const Menu = ({ match }) => {
+const Menu = ({params}) => {
 	//const id = match.params.id
 	const { id } = useParams();
 	const [active, setActive] = useState(false)
@@ -170,7 +170,7 @@ const Menu = ({ match }) => {
 							return (
 								<div key={food.id} className="trolley-row">
 									<span>{food.name}</span>
-									<span>$ {food.price}</span>
+									<span>₹ {food.price}</span>
 									<span>{food.amount}</span>
 									<button
 										className="delete-product-cart"
@@ -205,7 +205,7 @@ const Menu = ({ match }) => {
 							</div>
 							<div className="trolley-total">
 								<p>
-									<strong>Total: ${trolleyTotal()}</strong>
+									<strong>Total: ₹{trolleyTotal()}</strong>
 								</p>
 							</div>
 							<input
