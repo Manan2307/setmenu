@@ -5,7 +5,9 @@
 	grid-template-rows: 8em;
 	grid-template-areas: 'logo input shopping-cart';
 	align-items: center;
-	padding: 0 2em;
+	padding-top: 2em;
+	padding-left: 2em;
+	padding-right: 2em;
 	position: sticky;
 	top: 0;
 	background: rgb(255, 255, 255, 0.8);
@@ -191,6 +193,21 @@
 	font-weight: 500;
 }
 
+.filter_button {
+	display: inline-block;
+	
+	background: rgb(233, 233, 233);
+	padding: 0 2em;
+	outline: none;
+	border: none;
+	height: 3em;
+	border-radius: 25px;
+	margin: 2%;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
 	.menu {
 		padding: 0 2em;
@@ -203,6 +220,7 @@
 			'logo shopping-cart'
 			'input input';
 	}
+
 	.header__input {
 		width: 90%;
 	}

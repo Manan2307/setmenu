@@ -148,7 +148,6 @@ const Menu = () => {
 	// filter Menu Button updating functions
 	const filterMenu = async (category) => {
 		if (category === "All") {
-			console.log(category)
 			const foods = []
 			const response = await database
 				.collection('foods')
@@ -159,7 +158,6 @@ const Menu = () => {
 				foods.push({ ...doc.data(), id: doc.id })
 			})
 			setFood(foods)
-			console.log(foods)
 			return;
 		}
 		const updatedItems = food.filter((curElem) => {
@@ -277,7 +275,7 @@ const Menu = () => {
 					<div>
 						{
 							sortedCatValue.map((curElem, index) => {
-								return <button key={index} onClick={() => filterMenu(curElem)}> {curElem} </button>
+								return <button key={index} className="filter_button" onClick={() => filterMenu(curElem)}> {curElem} </button>
 							})
 						}
 					</div>
