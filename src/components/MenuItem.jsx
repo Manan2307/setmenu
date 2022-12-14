@@ -3,7 +3,7 @@ import Modal from './Modal'
 import Notiflix from 'notiflix'
 import '../assets/css/components/MenuItem.css'
 
-const MenuItem = ({ id, name, price, description, addToCart }) => {
+const MenuItem = ({ id, name, category, price, description, addToCart }) => {
 	const [openModal, setOpenModal] = useState(false)
 
 	useEffect(() => {
@@ -14,6 +14,7 @@ const MenuItem = ({ id, name, price, description, addToCart }) => {
 		const newItem = {
 			id,
 			name,
+			category,
 			description,
 			price,
 			amount: 1,
@@ -28,6 +29,8 @@ const MenuItem = ({ id, name, price, description, addToCart }) => {
 			{openModal && (
 				<Modal closeModal={(value) => setOpenModal(value)}>
 					<h2>{name}</h2>
+					<br />
+					<p>{category}</p>
 					<br />
 					<p>{description}</p>
 					<br />
@@ -52,6 +55,8 @@ const MenuItem = ({ id, name, price, description, addToCart }) => {
 				</div>
 				<div className="menu__item__content">
 					<h3>{name}</h3>
+					<br />
+					<p>{category}</p>
 					<br />
 					<p>{description.slice(0, 20)}...</p>
 					<br />

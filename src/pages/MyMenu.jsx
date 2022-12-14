@@ -14,9 +14,10 @@ const MyMenu = () => {
 	const InitialStateInputValues = {
 		name: '',
 		price: '',
+		category: '',
 		description: '',
 	}
-	const { currentUser } = useContext(AuthContext)
+	const {currentUser} = useContext(AuthContext)
 	const [openModal, setOpenModal] = useState(false)
 	const [NewFood, setNewFood] = useState(InitialStateInputValues)
 	const [foods, setfoods] = useState([])
@@ -213,6 +214,19 @@ const MyMenu = () => {
 								/>
 							</label>
 							<label>
+								Category
+								<input
+									//placeholder="Pav Bhaji..."
+									value={NewFood.category}
+									type="text"
+									name="category"
+									onChange={handleInput}
+									required
+									maxLength="20"
+									className="input-modal__new-food newfoodForm"
+								/>
+							</label>
+							<label>
 								Price
 								<input
 									//placeholder="200..."
@@ -289,6 +303,8 @@ const MyMenu = () => {
 										return (
 											<div key={food.id} className="food-container">
 												<h2>{food.name}</h2>
+												<br />
+												<p>{food.category}</p>
 												<br />
 												<p>{food.description}</p>
 												<br />

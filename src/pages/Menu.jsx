@@ -10,7 +10,7 @@ import '../assets/css/pages/Home.css'
 
 const Menu = () => {
 	//const id = match.params.id
-	const { id }  = useParams();
+	const { id } = useParams();
 	const [active, setActive] = useState(false)
 	const [noMenu, setNoMenu] = useState(false)
 	const [food, setFood] = useState([])
@@ -141,6 +141,32 @@ const Menu = () => {
 			setNoMenu(true)
 		}
 	}
+    
+	// category Sorting 
+	const sortedCatValue = [... new Set(food.map((curElem) => { return curElem.category })), 'All'];
+
+	// filter Menu Button updating functions
+	const filterMenu = async (category) => {
+		if (category === "All") {
+			console.log(category)
+			const foods = []
+			const response = await database
+				.collection('foods')
+				.where('idUser', '==', id)
+				.get()
+
+			response.forEach((doc) => {
+				foods.push({ ...doc.data(), id: doc.id })
+			})
+			setFood(foods)
+			console.log(foods)
+			return;
+		}
+		const updatedItems = food.filter((curElem) => {
+			return curElem.category === category;
+		});
+		setFood(updatedItems);
+	}
 
 	if (noMenu) {
 		return <NotFound />
@@ -155,7 +181,7 @@ const Menu = () => {
 			<>
 				{openModal && (
 					<Modal closeModal={(value) => setOpenModal(value)} little>
-						<div className="trolley-row">
+						<div key={food.id} className="trolley-row">
 							<h4>Product</h4>
 							<h4>Price</h4>
 							<h4>Quantity</h4>
@@ -170,6 +196,7 @@ const Menu = () => {
 							return (
 								<div key={food.id} className="trolley-row">
 									<span>{food.name}</span>
+									<span>{food.category}</span>
 									<span>₹ {food.price}</span>
 									<span>{food.amount}</span>
 									<button
@@ -184,7 +211,7 @@ const Menu = () => {
 						<form className="form-order" onSubmit={handleSubmit}>
 							<div className="trolley-total">
 								<label>
-							        	Table you are at:
+									Table you are at:
 									<input
 										className="input-table menuForm"
 										required
@@ -221,7 +248,7 @@ const Menu = () => {
 						<Link className="header__logo__link" to="/">
 							<img
 								className="header__logo"
-								src={process.env.PUBLIC_URL+"/img/logos/setmenu-blacklogo.png"}
+								src={process.env.PUBLIC_URL + "/img/logos/setmenu-blacklogo.png"}
 								alt="Logo"
 							/>
 						</Link>
@@ -240,11 +267,21 @@ const Menu = () => {
 							</div>
 							<img
 								className="header__button__img"
-								src={process.env.PUBLIC_URL+"/img/icons/shopping-cart.svg"}
+								src={process.env.PUBLIC_URL + "/img/icons/shopping-cart.svg"}
 								alt="Shop Car"
 							/>
 						</button>
 					</header>
+
+					{/* Filter Buttons */}
+					<div>
+						{
+							sortedCatValue.map((curElem, index) => {
+								return <button key={index} onClick={() => filterMenu(curElem)}> {curElem} </button>
+							})
+						}
+					</div>
+
 					<div className="main-container__title">
 						<h1 className="main-container__title__h1">Menu</h1>
 					</div>
@@ -262,6 +299,7 @@ const Menu = () => {
 												key={food.id}
 												id={food.id}
 												name={food.name}
+												category={food.category}
 												price={food.price}
 												description={food.description}
 												addToCart={(value) => addToCart(value)}
@@ -283,6 +321,7 @@ const Menu = () => {
 												key={food.id}
 												id={food.id}
 												name={food.name}
+												category={food.category}
 												price={food.price}
 												description={food.description}
 												addToCart={(value) => addToCart(value)}
@@ -301,7 +340,7 @@ const Menu = () => {
 		<div className="fullscreen-loader">
 			<img
 				className="fullscreen-loader__img"
-				src={process.env.PUBLIC_URL+"/img/logos/setmenu-blacklogo.png"}
+				src={process.env.PUBLIC_URL + "/img/logos/setmenu-blacklogo.png"}
 				alt="Logo"
 			/>
 		</div>
