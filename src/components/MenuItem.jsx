@@ -37,12 +37,13 @@ const MenuItem = ({ id, name, category, price, description, addToCart }) => {
 					<p>
 						<strong>₹ {price}</strong>
 					</p>
-					<input
+					{/* Enable this if You want Add to cart feature */}
+					{/* <input
 						onClick={handleClick}
 						type="submit"
 						className="modal__container__button newfoodForm"
 						value="add to cart!"
-					/>
+					/> */}
 				</Modal>
 			)}
 			<div onClick={() => setOpenModal(true)} className="menu__item">

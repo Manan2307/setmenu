@@ -49,6 +49,7 @@ const Menu = () => {
 		}
 	}
 
+	// Function of add to cart
 	const addToCart = (food) => {
 		settrolleyNumber(trolleyNumber + 1)
 		if (trolley.some((item) => food.id === item.id)) {
@@ -256,7 +257,8 @@ const Menu = () => {
 							type="text"
 							placeholder="Search"
 						/>
-						<button
+						{/* Check Out Cart Button */}
+						{/* <button
 							onClick={() => setOpenModal(true)}
 							className="header__button"
 						>
@@ -268,7 +270,7 @@ const Menu = () => {
 								src={process.env.PUBLIC_URL + "/img/icons/shopping-cart.svg"}
 								alt="Shop Car"
 							/>
-						</button>
+						</button> */}
 					</header>
 
 					{/* Filter Buttons */}
@@ -300,7 +302,8 @@ const Menu = () => {
 												category={food.category}
 												price={food.price}
 												description={food.description}
-												addToCart={(value) => addToCart(value)}
+												// Enable this if You want Add to cart feature
+												// addToCart={(value) => addToCart(value)}
 											/>
 										)
 									})}
@@ -322,7 +325,8 @@ const Menu = () => {
 												category={food.category}
 												price={food.price}
 												description={food.description}
-												addToCart={(value) => addToCart(value)}
+												// Enable this if You want Add to cart feature
+												// addToCart={(value) => addToCart(value)}
 											/>
 										)
 									})}
