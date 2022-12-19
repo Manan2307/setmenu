@@ -195,9 +195,9 @@
 
 .filter_button {
 	display: inline-block;
-	
+	color: gray;
 	background: rgb(233, 233, 233);
-	padding: 0 2em;
+	padding: 0 1em;
 	outline: none;
 	border: none;
 	height: 3em;

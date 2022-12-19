@@ -10,6 +10,7 @@ import LoginRegisterContainer from '../pages/LoginRegisterContainer';
 import '../assets/css/index.css'
 import Manan from "../pages/Manan";
 import Login from '../components/Login'
+import About from '../pages/About'
 
 // const App = () => {
 function App() {
@@ -26,6 +27,8 @@ function App() {
 					<Route path="/myorders" element={<MyOrders/>} />
 					<Route path="/menu/:id" element={<Menu/>} />
 					<Route element={<NotFound/>} />
+
+					<Route path="/about" element={<About/>} />
 				</Routes>
 		</AuthProvider>
 		</>

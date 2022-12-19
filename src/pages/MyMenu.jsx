@@ -9,6 +9,7 @@ import { database } from '../firebaseConfig'
 import { Link } from 'react-router-dom'
 import '../assets/css/pages/UserPanel.css'
 import '../assets/css/components/MyMenu.css'
+import Footer from '../components/Footer'
 
 const MyMenu = () => {
 	const InitialStateInputValues = {
@@ -331,7 +332,9 @@ const MyMenu = () => {
 						</>
 					)}
 				</section>
+			   <Footer/>
 			</UserPanelLayout>
+			
 		)
 	}
 	return <Navigate to="/" />
