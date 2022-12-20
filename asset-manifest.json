@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/setmenu/static/css/main.eadcb034.css",
+    "main.js": "/setmenu/static/js/main.f32f4934.js",
+    "index.html": "/setmenu/index.html",
+    "main.eadcb034.css.map": "/setmenu/static/css/main.eadcb034.css.map",
+    "main.f32f4934.js.map": "/setmenu/static/js/main.f32f4934.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eadcb034.css",
+    "static/js/main.f32f4934.js"
+  ]
+}
