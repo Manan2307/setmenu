@@ -11,7 +11,6 @@
 		"notiflix": "^3.2.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-firebase": "^2.2.8",
 		"react-router-dom": "^6.5.0"
 	},
 	"scripts": {
