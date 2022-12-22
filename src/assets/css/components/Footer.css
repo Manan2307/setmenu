@@ -1,7 +1,7 @@
 .footer {
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     color: #333;
-    padding: 20px 0;
+    padding: 2em;
   }
   
   .footer-container {

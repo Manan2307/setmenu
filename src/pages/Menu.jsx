@@ -7,6 +7,7 @@ import NotFound from './NotFound'
 import Modal from '../components/Modal'
 import EndOrder from '../components/EndOrder'
 import '../assets/css/pages/Home.css'
+import Footer from '../components/Footer'
 
 const Menu = () => {
 	//const id = match.params.id
@@ -335,6 +336,7 @@ const Menu = () => {
 						</>
 					)}
 				</div>
+				<div><Footer /></div>
 			</>
 		)
 	}
@@ -343,8 +345,7 @@ const Menu = () => {
 			<img
 				className="fullscreen-loader__img"
 				src={process.env.PUBLIC_URL + "/img/logos/setmenu-blacklogo.png"}
-				alt="Logo"
-			/>
+				alt="Logo" />
 		</div>
 	)
 }
