@@ -32,12 +32,12 @@ const About = () => {
           <br />We would love to hear from you!
         </p>
       </main>
-      <div>
+      {/* <div>
         <img
           className="about-container__illustration"
-          src={process.env.PUBLIC_URL + "/img/illustrations/Landing.svg"}
+          src={process.env.PUBLIC_URL + "/img/illustrations/landing.svg"}
           alt="Restaurant" />
-      </div>
+      </div> */}
     </div>
     <div><Footer /></div>
     </> 

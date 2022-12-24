@@ -4,14 +4,14 @@ import Register from '../components/Register'
 import { Link, Navigate } from 'react-router-dom'
 import '../assets/css/pages/LoginRegister.css'
 
-const LoginRegisterContainer = () => {
+const RegisterContainer = () => {
 	return (
 		<div className="login-register">
 			<div className="login-register__form">
 				<Link to="/">
 					<img
 						className="login-register__form__logo"
-						src={process.env.PUBLIC_URL+"/img/logos/setmenu-whitelogo.png"}
+						src={process.env.PUBLIC_URL + "/img/logos/setmenu-whitelogo.png"}
 						alt="Logo"
 					/>
 				</Link>
@@ -39,14 +39,17 @@ const LoginRegisterContainer = () => {
 						</span>
 					)}
 					<div className="login-register__form__links">
+						<Link className="login-register__form__links--link" to="/about">
+							About
+						</Link>
 						<Link className="login-register__form__links--link" to="/">
-							Terms and Conditions
+							Contact
 						</Link>
 						<Link className="login-register__form__links--link" to="/">
 							Privacy Policy
 						</Link>
 						<Link className="login-register__form__links--link" to="/">
-							Cookies
+							Terms and Conditions
 						</Link>
 						<br />
 						<br />
@@ -58,11 +61,11 @@ const LoginRegisterContainer = () => {
 			</div>
 			<div className="login-register__content">
 				<span className="login-register__content__title">
-			     	Don't let your restaurant stagnate in the digital age
+					Don't let your restaurant stagnate in the digital age
 				</span>
 				<img
 					className="login-register__content__image"
-					src={process.env.PUBLIC_URL+"/img/illustrations/login_register.png"}
+					src={process.env.PUBLIC_URL + "/img/illustrations/login_register.png"}
 					alt="Illustration"
 				/>
 			</div>
@@ -70,4 +73,4 @@ const LoginRegisterContainer = () => {
 	)
 }
 
-export default LoginRegisterContainer
+export default RegisterContainer

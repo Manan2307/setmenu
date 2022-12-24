@@ -8,6 +8,7 @@ import { Navigate } from 'react-router-dom'
 import { database } from '../firebaseConfig'
 import '../assets/css/pages/UserPanel.css'
 import '../assets/css/components/MyOrders.css'
+import Footer from '../components/Footer'
 
 const MyOrders = () => {
 	const { currentUser } = useContext(AuthContext)
@@ -75,7 +76,7 @@ const MyOrders = () => {
 
 	if (currentUser) {
 		return (
-			<UserPanelLayout title="My Orders">
+			<><UserPanelLayout title="My Orders">
 				{DeleteModal && (
 					<Modal
 						isOrders
@@ -119,7 +120,7 @@ const MyOrders = () => {
 														onClick={() => onDeleteOrder(order.id)}
 														className="order-container__header-button"
 													>
-														<img src={process.env.PUBLIC_URL+"/img/icons/trash.svg"} alt="Remove" />
+														<img src={process.env.PUBLIC_URL + "/img/icons/trash.svg"} alt="Remove" />
 													</button>
 												</div>
 												<br />
@@ -163,6 +164,10 @@ const MyOrders = () => {
 					)}
 				</section>
 			</UserPanelLayout>
+			<div>
+				<Footer />
+			</div>
+		</>
 		)
 	}
 	return <Navigate to="/" />

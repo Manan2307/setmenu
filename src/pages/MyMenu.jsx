@@ -268,16 +268,14 @@ const MyMenu = () => {
 								<Link
 									className="menu-link-qr__link"
 									to={`/menu/${currentUser.uid}`}
-								>{` ${window.location.origin.toString()}/menu/${
+								>{` ${window.location.origin.toString()}/#/menu/${
 									currentUser.uid
 								}`}</Link>
 							</p>
 							<a
 								className="menu-link-qr__qr"
 								role="button"
-								href={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${window.location.origin.toString()}/menu/${
-									currentUser.uid
-								}`}
+								href={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://www.setmenu.live/#/menu/${currentUser.uid}`}
 								rel="noopener noreferrer"
 								target="_blank"
 							>
@@ -332,7 +330,7 @@ const MyMenu = () => {
 						</>
 					)}
 				</section>
-			   <Footer/>
+			   <div><Footer/></div>
 			</UserPanelLayout>
 			
 		)

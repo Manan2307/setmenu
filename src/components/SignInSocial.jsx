@@ -9,31 +9,37 @@ const SignInSocial = ({ setErrors }) => {
 	const facebookProvider = new firebase.auth.FacebookAuthProvider()
 
 	const googleAuth = () => {
-		firebase
-			.auth()
-			.signInWithPopup(googleProvider)
-			.catch((err) => {
-				Notiflix.Notify.failure(
-					'Something went wrong trying to sign in with Google, please try again!'
-				)
-			})
+		// firebase
+		// 	.auth()
+		// 	.signInWithPopup(googleProvider)
+		// 	.catch((err) => {
+		// 		Notiflix.Notify.failure(
+		// 			'Something went wrong trying to sign in with Google, please try again!'
+		// 		)
+		// 	})
+		Notiflix.Notify.success(
+			'Coming Soon!'
+		)
 	}
 
 	const facebookAuth = () => {
-		firebase
-			.auth()
-			.signInWithPopup(facebookProvider)
-			.catch((err) => {
-				if (err.code === 'auth/account-exists-with-different-credential') {
-					setErrors({
-						facebook: true,
-					})
-				} else {
-					Notiflix.Notify.failure(
-						'Something went wrong while trying to log in with Facebook, please try again!'
-					)
-				}
-			})
+		// firebase
+		// 	.auth()
+		// 	.signInWithPopup(facebookProvider)
+		// 	.catch((err) => {
+		// 		if (err.code === 'auth/account-exists-with-different-credential') {
+		// 			setErrors({
+		// 				facebook: true,
+		// 			})
+		// 		} else {
+		// 			Notiflix.Notify.failure(
+		// 				'Something went wrong while trying to log in with Facebook, please try again!'
+		// 			)
+		// 		}
+		// 	})
+		Notiflix.Notify.success(
+			'Coming Soon!'
+		)
 	}
 
 	return (
@@ -46,7 +52,7 @@ const SignInSocial = ({ setErrors }) => {
 				>
 					<img
 						className="sign-in-social__button--img"
-						src={process.env.PUBLIC_URL+"/img/icons/google.svg"}
+						src={process.env.PUBLIC_URL + "/img/icons/google.svg"}
 						alt="Google"
 					/>
 				</button>
@@ -56,7 +62,7 @@ const SignInSocial = ({ setErrors }) => {
 				>
 					<img
 						className="sign-in-social__button--img"
-						src={process.env.PUBLIC_URL+"/img/icons/facebook.svg"}
+						src={process.env.PUBLIC_URL + "/img/icons/facebook.svg"}
 						alt="Facebook"
 					/>
 				</button>

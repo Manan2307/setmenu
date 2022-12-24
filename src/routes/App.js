@@ -6,10 +6,10 @@ import Menu from '../pages/Menu'
 import MyMenu from '../pages/MyMenu'
 import MyOrders from '../pages/MyOrders'
 import NotFound from '../pages/NotFound'
-import LoginRegisterContainer from '../pages/LoginRegisterContainer';
+import RegisterContainer from '../pages/RegisterContainer';
+import LoginContainer from '../pages/LoginContainer'
 import '../assets/css/index.css'
 import Manan from "../pages/Manan";
-import Login from '../components/Login'
 import About from '../pages/About'
 
 // const App = () => {
@@ -21,8 +21,8 @@ function App() {
 			     	<Route path="/" element={<Home/>} />
 					<Route path="/setmenu" element={<Home/>} />
 					<Route path="/manan" element={<Manan/>} />
-					<Route path="/login" element={<Login/>} />
-					<Route path="/register" element={<LoginRegisterContainer/>} />
+					<Route path="/login" element={<LoginContainer/>} />
+					<Route path="/register" element={<RegisterContainer/>} />
 					<Route path="/mymenu" element={<MyMenu/>} />
 					<Route path="/myorders" element={<MyOrders/>} />
 					<Route path="/menu/:id" element={<Menu/>} />
