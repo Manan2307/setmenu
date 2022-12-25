@@ -275,7 +275,7 @@ const MyMenu = () => {
 							<a
 								className="menu-link-qr__qr"
 								role="button"
-								href={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://www.setmenu.live/#/menu/${currentUser.uid}`}
+								href={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://www.setmenu.live%2F%23/menu/${currentUser.uid}`}
 								rel="noopener noreferrer"
 								target="_blank"
 							>
