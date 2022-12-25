@@ -42,13 +42,13 @@ const LoginContainer = () => {
                         <Link className="login-register__form__links--link" to="/about">
                             About
                         </Link>
-                        <Link className="login-register__form__links--link" to="/">
+                        <Link className="login-register__form__links--link" to="/contact">
                             Contact
                         </Link>
-                        <Link className="login-register__form__links--link" to="/">
+                        <Link className="login-register__form__links--link" to="/privacy">
                             Privacy Policy
                         </Link>
-                        <Link className="login-register__form__links--link" to="/">
+                        <Link className="login-register__form__links--link" to="/terms">
                             Terms and Conditions
                         </Link>
                         <br />

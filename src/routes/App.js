@@ -10,7 +10,10 @@ import RegisterContainer from '../pages/RegisterContainer';
 import LoginContainer from '../pages/LoginContainer'
 import '../assets/css/index.css'
 import Manan from "../pages/Manan";
-import About from '../pages/About'
+import About from '../pages/About';
+import Privacy from '../components/PrivacyPolicy'
+import Terms from '../components/Terms'
+import Contact from '../pages/Contact'
 
 // const App = () => {
 function App() {
@@ -29,6 +32,9 @@ function App() {
 					<Route element={<NotFound/>} />
 
 					<Route path="/about" element={<About/>} />
+					<Route path="/contact" element={<Contact/>} />
+					<Route path="/privacy" element={<Privacy/>} />
+					<Route path="/terms" element={<Terms/>} />
 				</Routes>
 		</AuthProvider>
 		</>
