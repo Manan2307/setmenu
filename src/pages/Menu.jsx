@@ -145,7 +145,7 @@ const Menu = () => {
 	}
     
 	// category Sorting 
-	const sortedCatValue = [... new Set(food.map((curElem) => { return curElem.category })), 'All'];
+	const sortedCatValue = ['All',... new Set(food.map((curElem) => { return curElem.category }))];
 
 	// filter Menu Button updating functions
 	const filterMenu = async (category) => {

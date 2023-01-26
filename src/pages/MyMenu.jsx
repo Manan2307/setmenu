@@ -134,7 +134,7 @@ const MyMenu = () => {
 	const addfood = async () => {
 		const newfood = {
 			...NewFood,
-			price: parseInt(NewFood.price, 10),
+			//price: parseInt(NewFood.price, 10),
 			idUser: currentUser.uid,
 		}
 
@@ -210,7 +210,7 @@ const MyMenu = () => {
 									name="name"
 									onChange={handleInput}
 									required
-									maxLength="20"
+									maxLength="200"
 									className="input-modal__new-food newfoodForm"
 								/>
 							</label>
@@ -223,7 +223,7 @@ const MyMenu = () => {
 									name="category"
 									onChange={handleInput}
 									required
-									maxLength="20"
+									maxLength="200"
 									className="input-modal__new-food newfoodForm"
 								/>
 							</label>
@@ -232,10 +232,11 @@ const MyMenu = () => {
 								<input
 									//placeholder="200..."
 									value={NewFood.price}
-									type="number"
+									type="text"
 									name="price"
 									onChange={handleInput}
 									required
+									maxLength="200"
 									className="input-modal__new-food newfoodForm"
 								/>
 							</label>
@@ -247,7 +248,7 @@ const MyMenu = () => {
 									type="text"
 									name="description"
 									onChange={handleInput}
-									required
+									//required
 									className="input-modal__new-food input-modal__new-food--textarea newfoodForm"
 								/>
 							</label>
