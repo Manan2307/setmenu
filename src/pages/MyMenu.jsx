@@ -18,7 +18,7 @@ const MyMenu = () => {
 		category: '',
 		description: '',
 	}
-	const {currentUser} = useContext(AuthContext)
+	const { currentUser } = useContext(AuthContext)
 	const [openModal, setOpenModal] = useState(false)
 	const [NewFood, setNewFood] = useState(InitialStateInputValues)
 	const [foods, setfoods] = useState([])
@@ -29,6 +29,9 @@ const MyMenu = () => {
 	const [loaders, setLoaders] = useState({
 		foodsLoader: true,
 	})
+
+	const [searchtext, setsearchtext] = useState('')
+	const [searchResult, setSearchResult] = useState([])
 
 	useEffect(() => {
 		document.title = 'SetMenu - My Menu'
@@ -161,6 +164,17 @@ const MyMenu = () => {
 		setNewFood(InitialStateInputValues)
 	}
 
+	const handleChange = (e) => {
+		const text = e.target.value
+		setsearchtext(text)
+
+		const search = foods.filter((food) => {
+			return `${food.name}`.toLowerCase().includes(text.toLowerCase())
+		})
+
+		setSearchResult(search)
+	}
+
 	if (currentUser) {
 		return (
 			<UserPanelLayout
@@ -269,9 +283,8 @@ const MyMenu = () => {
 								<Link
 									className="menu-link-qr__link"
 									to={`/menu/${currentUser.uid}`}
-								>{` ${window.location.origin.toString()}/#/menu/${
-									currentUser.uid
-								}`}</Link>
+								>{` ${window.location.origin.toString()}/#/menu/${currentUser.uid
+									}`}</Link>
 							</p>
 							<a
 								className="menu-link-qr__qr"
@@ -283,12 +296,18 @@ const MyMenu = () => {
 								Menu QR Code
 								<img
 									className="menu-link-qr__qr--icon"
-									src={process.env.PUBLIC_URL+"/img/icons/qrcode.svg"}
+									src={process.env.PUBLIC_URL + "/img/icons/qrcode.svg"}
 									alt="QR"
 								/>
 							</a>
 						</div>
 					)}
+					<input
+						onChange={handleChange}
+						className="header__input"
+						type="text"
+						placeholder="Search"
+					/>
 					{loaders.foodsLoader ? (
 						<Loader />
 					) : (
@@ -299,41 +318,81 @@ const MyMenu = () => {
 								</div>
 							) : (
 								<>
-									{foods.map((food) => {
-										return (
-											<div key={food.id} className="food-container">
-												<h2>{food.name}</h2>
-												<br />
-												<p>{food.category}</p>
-												<br />
-												<p>{food.description}</p>
-												<br />
-												<strong>₹ {food.price}</strong>
-												<div className="food-container__buttons">
-													<button
-														className="food-container-button food-container__button-edit"
-														onClick={() => onEditFood(food.id)}
-													>
-														Edit
-													</button>
-													<button
-														className="food-container-button food-container__button-delete"
-														onClick={() => onDeleteFood(food.id)}
-													>
-														Remove
-													</button>
-												</div>
-											</div>
-										)
-									})}
+									{!searchtext && (
+										<section className="menu">
+											{foods.map((food) => {
+												return (
+													<div key={food.id} className="food-container">
+														<h2>{food.name}</h2>
+														<br />
+														<p>{food.category}</p>
+														<br />
+														<p>{food.description}</p>
+														<br />
+														<strong>₹ {food.price}</strong>
+														<div className="food-container__buttons">
+															<button
+																className="food-container-button food-container__button-edit"
+																onClick={() => onEditFood(food.id)}
+															>
+																Edit
+															</button>
+															<button
+																className="food-container-button food-container__button-delete"
+																onClick={() => onDeleteFood(food.id)}
+															>
+																Remove
+															</button>
+														</div>
+													</div>
+												)
+											})}
+										</section>
+									)}
+									{!searchResult.length && searchtext && (
+										<div className="my-menu__no-foods">
+											<p>{`It was not found: ${searchtext}`}</p>
+										</div>
+									)}
+									{searchResult.length && searchtext && (
+										<section className="menu">
+											{searchResult.map((food) => {
+												return (
+													<div key={food.id} className="food-container">
+														<h2>{food.name}</h2>
+														<br />
+														<p>{food.category}</p>
+														<br />
+														<p>{food.description}</p>
+														<br />
+														<strong>₹ {food.price}</strong>
+														<div className="food-container__buttons">
+															<button
+																className="food-container-button food-container__button-edit"
+																onClick={() => onEditFood(food.id)}
+															>
+																Edit
+															</button>
+															<button
+																className="food-container-button food-container__button-delete"
+																onClick={() => onDeleteFood(food.id)}
+															>
+																Remove
+															</button>
+														</div>
+													</div>
+												)
+											})}
+										</section>
+									)}
 								</>
 							)}
 						</>
 					)}
 				</section>
-			   <div><Footer/></div>
+				<div><Footer /></div>
 			</UserPanelLayout>
-			
+
 		)
 	}
 	return <Navigate to="/" />
