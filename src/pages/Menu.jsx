@@ -25,6 +25,9 @@ const Menu = () => {
 	const [searchtext, setsearchtext] = useState('')
 	const [searchResult, setSearchResult] = useState([])
 
+	const [sortBy, setSortBy] = useState("name");
+	const [sortOrder, setSortOrder] = useState("asc");
+
 	useEffect(() => {
 		document.title = 'SetMenu'
 		getMenuState()
@@ -143,9 +146,9 @@ const Menu = () => {
 			setNoMenu(true)
 		}
 	}
-    
+
 	// category Sorting 
-	const sortedCatValue = ['All',... new Set(food.map((curElem) => { return curElem.category }))];
+	const sortedCatValue = ['All', ... new Set(food.map((curElem) => { return curElem.category }))];
 
 	// filter Menu Button updating functions
 	const filterMenu = async (category) => {
@@ -167,6 +170,26 @@ const Menu = () => {
 		});
 		setFood(updatedItems);
 	}
+
+	const filteredFoods = food.filter((food) =>
+		food.name.toLowerCase().includes(searchtext.toLowerCase())
+	);
+
+	const sortedFoods = filteredFoods.sort((a, b) => {
+		if (sortBy === "name") {
+			if (sortOrder === "asc") {
+				return a.name.localeCompare(b.name);
+			} else {
+				return b.name.localeCompare(a.name);
+			}
+		} else if (sortBy === "price") {
+			if (sortOrder === "asc") {
+				return a.price - b.price;
+			} else {
+				return b.price - a.price;
+			}
+		}
+	});
 
 	if (noMenu) {
 		return <NotFound />
@@ -286,6 +309,14 @@ const Menu = () => {
 					<div className="main-container__title">
 						<h1 className="main-container__title__h1">Menu</h1>
 					</div>
+					<div>
+						<h4>&nbsp;&nbsp;&nbsp;Sort by:</h4>
+						<button className="filter_button" onClick={() => setSortBy("name")}>Name</button>
+						<button className="filter_button" onClick={() => setSortBy("price")}>Price</button>
+						<h4>&nbsp;&nbsp;&nbsp;Order of sort:</h4>
+						<button className="filter_button" onClick={() => setSortOrder("asc")}>Ascending</button>
+						<button className="filter_button" onClick={() => setSortOrder("desc")}>Descending</button>
+					</div>
 					{food.length === 0 ? (
 						<div className="no-food">
 							<p>This menu has no food yet!</p>
@@ -294,7 +325,8 @@ const Menu = () => {
 						<>
 							{!searchtext && (
 								<section className="menu">
-									{food.map((food) => {
+									{/* {foods.map((food) => { */}
+									{sortedFoods.map((food) => {
 										return (
 											<MenuItem
 												key={food.id}
@@ -303,8 +335,8 @@ const Menu = () => {
 												category={food.category}
 												price={food.price}
 												description={food.description}
-												// Enable this if You want Add to cart feature
-												// addToCart={(value) => addToCart(value)}
+											// Enable this if You want Add to cart feature
+											// addToCart={(value) => addToCart(value)}
 											/>
 										)
 									})}
@@ -326,8 +358,8 @@ const Menu = () => {
 												category={food.category}
 												price={food.price}
 												description={food.description}
-												// Enable this if You want Add to cart feature
-												// addToCart={(value) => addToCart(value)}
+											// Enable this if You want Add to cart feature
+											// addToCart={(value) => addToCart(value)}
 											/>
 										)
 									})}

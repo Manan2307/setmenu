@@ -33,6 +33,9 @@ const MyMenu = () => {
 	const [searchtext, setsearchtext] = useState('')
 	const [searchResult, setSearchResult] = useState([])
 
+	const [sortBy, setSortBy] = useState("name");
+	const [sortOrder, setSortOrder] = useState("asc");
+
 	useEffect(() => {
 		document.title = 'SetMenu - My Menu'
 		Notiflix.Notify.init({ position: 'right-bottom' })
@@ -137,7 +140,7 @@ const MyMenu = () => {
 	const addfood = async () => {
 		const newfood = {
 			...NewFood,
-			//price: parseInt(NewFood.price, 10),
+			price: parseInt(NewFood.price, 100),
 			idUser: currentUser.uid,
 		}
 
@@ -174,6 +177,26 @@ const MyMenu = () => {
 
 		setSearchResult(search)
 	}
+
+	const filteredFoods = foods.filter((food) =>
+		food.name.toLowerCase().includes(searchtext.toLowerCase())
+	);
+
+	const sortedFoods = filteredFoods.sort((a, b) => {
+		if (sortBy === "name") {
+			if (sortOrder === "asc") {
+				return a.name.localeCompare(b.name);
+			} else {
+				return b.name.localeCompare(a.name);
+			}
+		} else if (sortBy === "price") {
+			if (sortOrder === "asc") {
+				return a.price - b.price;
+			} else {
+				return b.price - a.price;
+			}
+		}
+	});
 
 	if (currentUser) {
 		return (
@@ -246,7 +269,7 @@ const MyMenu = () => {
 								<input
 									//placeholder="200..."
 									value={NewFood.price}
-									type="text"
+									type="number"
 									name="price"
 									onChange={handleInput}
 									required
@@ -320,7 +343,16 @@ const MyMenu = () => {
 								<>
 									{!searchtext && (
 										<section className="menu">
-											{foods.map((food) => {
+											<div>
+												<h4>Sort by:</h4>
+												<button className="filter_button" onClick={() => setSortBy("name")}>Sort by Name</button>
+												<button className="filter_button" onClick={() => setSortBy("price")}>Sort by Price</button>
+												<h4>Order of sort:</h4>
+												<button className="filter_button" onClick={() => setSortOrder("asc")}>Ascending</button>
+												<button className="filter_button" onClick={() => setSortOrder("desc")}>Descending</button>
+											</div>
+											{/* {foods.map((food) => { */}
+											{sortedFoods.map((food) => {
 												return (
 													<div key={food.id} className="food-container">
 														<h2>{food.name}</h2>
