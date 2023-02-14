@@ -140,7 +140,7 @@ const MyMenu = () => {
 	const addfood = async () => {
 		const newfood = {
 			...NewFood,
-			price: parseInt(NewFood.price, 100),
+			//price: parseInt(NewFood.price, 100),
 			idUser: currentUser.uid,
 		}
 
